@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-      # get 'welcome/index'
+     
         root to:'welcome#index'
       
        get 'app', to: 'users#index'
@@ -9,4 +9,3 @@ end
 
 
 
-# https://levelup.gitconnected.com/vue-js-with-rails-6-and-performing-crud-operations-b043ef3691f2

@@ -2,11 +2,7 @@
 
   <v-data-table light :headers="headers"  :search="search" :items="users"   class="elevation-1">
 
-<!-- :search="search" -->
-
-
-
-    <template v-slot:top>
+  <template v-slot:top>
       <v-toolbar flat color="light-blue">
         <v-toolbar-title >Users Lists</v-toolbar-title>
          <v-spacer></v-spacer>
@@ -74,23 +70,14 @@
      <v-btn small color="blue darken-1" class="mr-2" @click="deleteItem(item)">del</v-btn>
     </template>
 
-
-   
-    <!-- <template v-slot:no-data>
-      <v-btn color="primary" @click="initialize">Reset</v-btn>
-    </template> -->
-
-
-
-    
-  </v-data-table>
+    </v-data-table>
 </template>
 
 <script>
 import axios from "axios";
 export default {
   data: () => ({
-        search:'',
+    search:'',
     dialog: false,
     headers: [
       {
@@ -136,24 +123,6 @@ export default {
     this.filterUsers();
   },
   methods: {
-    filterUsers(){
-      return axios
-       .get("https://localhost:3000/users")
-        .then(response => {
-
-          if (this.search) {
-            this.users = response.results.filter(users =>
-              users.name.toLowerCase().includes(this.search.toLowerCase())
-            );
-          } else {
-            this.users = res.results;
-          }
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    },
-
     initialize() {
       return axios
         .get("http://localhost:3000/users")
