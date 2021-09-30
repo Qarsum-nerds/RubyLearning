@@ -5,29 +5,25 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
-// import Vue from 'vue'
-// import App from '../app.vue'
 
 
-import Vue from 'vue'
-import App from '../app.vue'
 
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
-Vue.use(Vuetify)
+// import Vuetify from 'vuetify'
+// import 'vuetify/dist/vuetify.min.css'
+// Vue.use(Vuetify)
 
-document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
+// document.addEventListener('DOMContentLoaded', () => {
+//   const app = new Vue({
 
 
-    vuetify: new Vuetify(),
+//     vuetify: new Vuetify(),
     
-    render: h => h(App)
-  }).$mount()
-  document.body.appendChild(app.$el)
+//     render: h => h(App)
+//   }).$mount()
+//   document.body.appendChild(app.$el)
 
-  console.log(app)
-})
+//   console.log(app)
+// })
 
 
 // The above code uses Vue without the compiler, which means you cannot
@@ -37,26 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
 // comment out the above code and uncomment the below
 // Add <%= javascript_pack_tag 'hello_vue' %> to your layout
 // Then add this markup to your html template:
-//
-//  <div id='main'>
-//   {{message}}
-//   <app></app>
-// </div> 
 
 
-// import Vue from 'vue/dist/vue.esm'
-// import App from '../app.vue'
-//
-// document.addEventListener('DOMContentLoaded', () => {
-//   const app = new Vue({
-//     el: '#hello',
-//     data: {
-//       message: "Can you say hello?"
-//     },
-//     components: { App }
-//   })
-// })
-//
+import Vue from 'vue/dist/vue.esm'
+import App from '../app.vue'
+import Test from '../test.vue'
+
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+Vue.use(Vuetify);
+const vuetify = new Vuetify();
+
+Vue.component('MyTestComponent', App);
+Vue.component('Test', Test);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const app = new Vue({
+    el: '#app',
+    vuetify
+  })
+})
+
 //
 //
 // If the project is using turbolinks, install 'vue-turbolinks':
