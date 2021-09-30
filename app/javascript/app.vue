@@ -1,11 +1,8 @@
 
 <template>
-
-  <div id="app">
-    <v-app>
+  <div>
+    <h1>hoi i am App.vue</h1>
       <p>{{ message }}</p>
-      <sample/>
-    </v-app>
   </div>
 </template>
 
@@ -13,16 +10,16 @@
 
 
 
-import sample from "./packs/components/sample.vue";
+// import sample from "./packs/components/sample.vue";
 export default {
   data: function() {
     return {
       message: "Helloo Vue!"
     };
   },
-  components: {
-    sample: sample
-  }
+  // components: {
+  //   sample: sample
+  // }
  
 };
 </script>
